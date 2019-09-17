@@ -15,7 +15,8 @@ public class AppLauncher {
     @Bean
     public CommandLineRunner commandLineRunner(TradingService service) {
         return args -> {
-            service.getOrders();
+            service.getAllOrders();
+            //service.placeOrder();
         };
     }
 

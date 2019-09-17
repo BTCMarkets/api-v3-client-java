@@ -11,6 +11,7 @@ import org.springframework.web.client.RestClientException;
 public class TradingService {
     private static final Logger LOG = LoggerFactory.getLogger(TradingService.class);
     private static final String ORDERS_PATH = "/v3/orders";
+    private static final String ORDERS_STATUS_QUERY = "status=all";
     
     private final APIClient client;
 
@@ -19,7 +20,7 @@ public class TradingService {
     }
     
     public void placeOrder() {
-        String postData = "{\"marketId\":\"XRP-AUD\",\"price\":\"0.23\",\"volume\":\"1.0\",\"side\":\"Bid\",\"type\":\"Limit\"}";
+        String postData = "{\"marketId\":\"XRP-AUD\",\"price\":\"0.23\",\"amount\":\"1.0\",\"side\":\"Bid\",\"type\":\"Limit\"}";
         try {
             ResponseEntity<String> result = client.callHttpPost(ORDERS_PATH, postData);
             LOG.info("placed order successfully ", result.getBody());
@@ -33,9 +34,9 @@ public class TradingService {
     }
     
     // getting orders for all markets and all statues
-    public void getOrders() {
+    public void getAllOrders() {
         try {
-            ResponseEntity<String> result = client.callHttpGet(ORDERS_PATH, null); 
+            ResponseEntity<String> result = client.callHttpGet(ORDERS_PATH, ORDERS_STATUS_QUERY); 
             LOG.info(result.getBody());
         } catch (HttpStatusCodeException e) {
             String responseBody = e.getResponseBodyAsString();
