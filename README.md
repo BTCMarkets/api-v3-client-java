@@ -7,11 +7,19 @@ The application uses SpringBoot and runs as a command line and can place or list
 Add your API key and secret before running the application.
 
 
-To run the sample via maven command line:  
+To build using maven:
 
 ```
 mvn clean install 
 ```
+
+To run the application:  
+
+```
+java -jar target/api-v3-client-java-0.0.1.jar
+```
+
+Or 
 
 ```
 mvn spring-boot:run
