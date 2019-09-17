@@ -1,10 +1,11 @@
 # api-v3-client-java
 
-sample application demonstrating how to connect to BTC Markets' API v3 using Java application. 
+This sample application demonstrates how to connect to BTC Markets' API v3 using Java language. 
+			
+The application uses SpringBoot and runs as a command line and can place or list all orders.
 
-The application is based on SpringBoot and by default tries to list your order history.
+Add your API key and secret before running the application.
 
-Make sure to add your api key and secret before running the application
 
 To run the sample via maven command line:  
 
