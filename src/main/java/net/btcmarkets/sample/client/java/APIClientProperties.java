@@ -25,5 +25,4 @@ public class APIClientProperties {
     public void setSecret(String secret) {
         this.secret = secret;
     }
-    
 }

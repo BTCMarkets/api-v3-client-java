@@ -110,5 +110,4 @@ public class APIClient {
         }
         return signature;
     }
-
 }
