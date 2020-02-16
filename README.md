@@ -6,6 +6,11 @@ The application uses SpringBoot and runs as a command line and can place or list
 
 Add your API key and secret before running the application.
 
+To input your API key and secret, update this file:
+
+```
+src\main\resources\application.properties
+```
 
 To build using maven:
 
